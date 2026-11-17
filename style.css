@@ -61,7 +61,7 @@ body {
 }
 .ear.left::after {
   clip-path: polygon(0% 100%, 8% 0%, 100% 50%, 100% 100%);
-  transform: scale(0.76);
+  transform: scale(0.86);
   transform-origin: 85% 100%;
 }
 
@@ -71,7 +71,7 @@ body {
 }
 .ear.right::after {
   clip-path: polygon(0% 50%, 92% 0%, 100% 100%, 0% 100%);
-  transform: scale(0.76);
+  transform: scale(0.86);
   transform-origin: 15% 100%;
 }
 
