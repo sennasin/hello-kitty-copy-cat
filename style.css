@@ -40,26 +40,39 @@ body {
   z-index: 2;
 }
 
-/* EARS */
+/* EARS: black triangle with a smaller white triangle on top */
 .ear {
-  top: 11cqw;
-  background: var(--white);
-  border: var(--stroke) solid var(--ink);
+  top: 5cqw;
+  width: 21cqw;
+  height: 22cqw;
+  background: var(--ink);
   z-index: 1;
 }
-.ear.left {
-  left: 17cqw;
-  width: 18cqw;
-  height: 17cqw;
-  border-radius: 7cqw 3cqw 1cqw 1cqw;
-  transform: rotate(-12deg);
+.ear::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--white);
 }
+
+.ear.left {
+  left: 15cqw;
+  clip-path: polygon(0% 100%, 8% 0%, 100% 50%, 100% 100%);
+}
+.ear.left::after {
+  clip-path: polygon(0% 100%, 8% 0%, 100% 50%, 100% 100%);
+  transform: scale(0.66);
+  transform-origin: 85% 100%;
+}
+
 .ear.right {
-  left: 67cqw;
-  width: 17cqw;
-  height: 17cqw;
-  border-radius: 3cqw 7cqw 1cqw 1cqw;
-  transform: rotate(12deg);
+  left: 64cqw;
+  clip-path: polygon(0% 50%, 92% 0%, 100% 100%, 0% 100%);
+}
+.ear.right::after {
+  clip-path: polygon(0% 50%, 92% 0%, 100% 100%, 0% 100%);
+  transform: scale(0.66);
+  transform-origin: 15% 100%;
 }
 
 /* EYES */
@@ -86,7 +99,7 @@ body {
   z-index: 3;
 }
 
-/* WHISKERS: shorter, overlapping onto the face */
+/* WHISKERS */
 .whisker {
   height: 1.8cqw;
   background: var(--ink);
@@ -105,7 +118,7 @@ body {
 .whisker.right.b { right: 11cqw; transform: rotate(6deg); }
 .whisker.right.c { right: 9cqw;  transform: rotate(22deg); }
 
-/* BOW: two rounded-square loops plus a big knot */
+/* BOW */
 .bow {
   left: 51cqw;
   top: 11cqw;
